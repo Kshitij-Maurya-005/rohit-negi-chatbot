@@ -47,7 +47,7 @@ async function handleSend() {
   messages.scrollTop = messages.scrollHeight;
 
   // 👇 Send message to backend
-  const res = await fetch("/chat", {
+  const res = await fetch("https://rohit-negi-chatbot-lsor.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query: userText }),
