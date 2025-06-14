@@ -52,7 +52,4 @@ This bot teaches concepts like OS, DBMS, CN, DSA using Hinglish slangs, analogie
 git clone https://github.com/Kshitij-Maurya-005/rohit-negi-chatbot.git
 cd rohit-negi-chatbot
 npm install
-const res = await fetch("/chat", {    // in script.js on line 50 use this  for testing on local system and then add your backend deployed link before /chat to run it on internet 
-const res = await fetch("hhtps:your_link/chat", {  // for deplooyment
-
 
