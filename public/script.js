@@ -16,6 +16,14 @@ voiceToggle.addEventListener("change", (e) => {
   e.target.nextSibling.textContent = label;
 });
 
+document.getElementById("historyToggle").addEventListener("change", (e) => {
+  fetch("/toggle-history", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled: e.target.checked }),
+  });
+});
+
 function appendMessage(text, sender, isHTML = false) {
   const div = document.createElement("div");
   div.className = `message ${sender}`;
@@ -47,7 +55,7 @@ async function handleSend() {
   messages.scrollTop = messages.scrollHeight;
 
   // 👇 Send message to backend
-  const res = await fetch("https://rohit-negi-chatbot-lsor.onrender.com/chat", {
+  const res = await fetch("/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query: userText }),
